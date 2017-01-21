@@ -1,5 +1,6 @@
 export default class HomeService {
     constructor($http) {
+        'ngInject';
         this.$http = $http;
         this.APPID = '52a5953e2a7bdc44bf863adcd65226c7';
     }
