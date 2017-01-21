@@ -1,0 +1,46 @@
+<div class="container fc-wrap">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h4><a ui-sref="home"><i class="material-icons">first_page</i></a><em>Weather for: {{$ctrl.place}}</em></h4>
+            <div class="panel panel-info fc-wrap__panel">
+                <div class="panel-heading fc-wrap__panel-heading">
+                    <div class="btn-group">
+                        <a ng-repeat="(key, val) in $ctrl.filters" ng-model="$ctrl.filters[key]" class="btn fc-wrap__button" ng-click="$ctrl.setActive(key)"
+                            ng-class="{'fc-wrap__button--active': $ctrl.filters[key] === true}">{{key}}</a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div ng-repeat="w in $ctrl.data">
+                        <div class="well well-lg fc-wrap__well">
+                            <span class="fc-wrap__well__date">
+                                {{ $ctrl.convertToDate(w.dt) | date: 'dd. MMM, y'}}
+                            </span>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <i ng-if='w.weather[0].id >= 600 && w.weather[0].id < 700' class="wi wi-day-snow fc-wrap__icons"></i>
+                                    <i ng-if='w.weather[0].id >= 200 && w.weather[0].id < 300' class="wi wi-day-thunderstorm fc-wrap__icons"></i>
+                                    <i ng-if='w.weather[0].id >= 300 && w.weather[0].id < 500' class="wi wi-day-sleet fc-wrap__icons"></i>
+                                    <i ng-if='w.weather[0].id >= 500 && w.weather[0].id < 600' class="wi wi-day-thunderstorm fc-wrap__icons"></i>
+                                    <i ng-if='w.weather[0].id >= 800 && w.weather[0].id < 900' class="wi wi-day-sunny fc-wrap__icons"></i>
+                                    <br/>
+                                    <br/>
+                                    <span class="fc-wrap__well__desc">{{w.weather[0].description}}</span>
+                                </div>
+                                <div class="col-md-6">
+                                    Minimal daily temperature:
+                                    <span class="fc-wrap__well__temp">{{ $ctrl.convertToCelsius(w.temp.min)}}°C</span>
+                                    <br/><br/>
+                                    <span class="fc-wrap__well__temp">Maximal daily temperature: {{ $ctrl.convertToCelsius(w.temp.max)}}°C</span>
+                                    <br/>
+                                    <br/>
+                                    <span class="fc-wrap__well__temp">Daily temperature: {{ $ctrl.convertToCelsius(w.temp.day)}}°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

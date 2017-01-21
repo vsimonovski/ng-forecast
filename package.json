@@ -1,0 +1,57 @@
+{
+  "name": "ng-forecast",
+  "version": "1.0.0",
+  "description": "Forecast app based on Angular",
+  "scripts": {
+    "build": "rimraf dist && webpack --bail --progress --profile",
+    "server": "webpack-dev-server --history-api-fallback --inline --progress",
+    "start": "npm run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Vladimir Simonovski",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "angular": "1.5.9"
+  },
+  "devDependencies": {
+    "angular-animate": "^1.5.9",
+    "angular-aria": "^1.5.9",
+    "angular-loading-bar": "^0.9.0",
+    "angular-material": "^1.1.1",
+    "angular-resource": "1.5.9",
+    "angular-route": "1.5.9",
+    "angular-ui-router": "^0.4.2",
+    "autoprefixer": "^6.0.3",
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "bootstrap-material-design": "^0.5.10",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.23.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.7.0",
+    "font-awesome-webpack": "0.0.4",
+    "html-webpack-plugin": "^2.7.1",
+    "ng-annotate-webpack-plugin": "^0.2.1-pre",
+    "ngtemplate-loader": "^1.3.1",
+    "node-libs-browser": "^2.0.0",
+    "node-sass": "^4.3.0",
+    "null-loader": "^0.1.1",
+    "postcss-loader": "^1.1.1",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.1",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.0",
+    "weather-icons": "^1.3.2",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

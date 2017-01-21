@@ -1,0 +1,13 @@
+<div class="main-wrap main-wrap--vcenter">
+    <div class="container home-wrap home-wrap--vcenter">
+        <img class="img img-responsive home-wrap__logo" src="/assets/img/storm.png" alt="">
+        <form>
+            <div class="form-group label-floating home-wrap__input">
+                <label for="i5" class="control-label">City name</label>
+                <input type="text" ng-model="query" class="form-control" id="i5" autocomplete="off">
+                <span class="help-block">ex: Belgrade, RS</span>
+            </div>
+            <input type="submit" value="Go!" ui-sref="forecastSingle({q: query})" class="btn btn-raised btn-info home-wrap__button" ng-click="$ctrl.sendData(query)">
+        </form>
+    </div>
+</div>
