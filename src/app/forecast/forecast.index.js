@@ -8,7 +8,7 @@ import TemperatureComponent from './temperature.component';
 import AppService from '../app.service';
 
 export default angular.module('wFct.forecast', [])
-    .controller('ForecastController', ['$stateParams', 'appService', '$scope', ForecastController])
+    .controller('ForecastController', ['$stateParams', 'appService', ForecastController])
     .component('weatherIcons', ForecastComponent)
     .component('temperature', TemperatureComponent)
     .service('appService', AppService)

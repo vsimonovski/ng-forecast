@@ -5,6 +5,9 @@
 * Angular@1.5.9, written in ES6
 * Webpack
 
+## Source
+[Open Weather Map API](http://openweathermap.org/api)
+
 ## Installation
 * Clone or download repository
 * Navigate to cloned/downloaded repository and run `npm i`

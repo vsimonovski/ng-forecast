@@ -1,5 +1,6 @@
 export default class ForecastController {
-    constructor($stateParams, appService, $scope) {
+    
+    constructor($stateParams, appService) {
         'ngInject';
         this.appService = appService;
         this.days = $stateParams.id || 1;

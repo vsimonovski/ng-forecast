@@ -7,7 +7,13 @@
                 <input type="text" ng-model="query" class="form-control" id="i5" autocomplete="off">
                 <span class="help-block">ex: Belgrade, RS</span>
             </div>
-            <input type="submit" value="Go!" ui-sref="forecastSingle({q: query})" class="btn btn-raised btn-info home-wrap__button" ng-click="$ctrl.sendData(query)">
+            <input 
+                type="submit" 
+                value="Go!" 
+                ui-sref="forecastSingle({q: query})"
+                class="btn btn-raised btn-info home-wrap__button" 
+                ng-disabled="query.length === 0 || !query"
+                >
         </form>
     </div>
 </div>
