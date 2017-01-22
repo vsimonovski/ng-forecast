@@ -1,8 +1,8 @@
-export default class HomeService {
+export default class AppService {
     constructor($http) {
         'ngInject';
         this.$http = $http;
-        this.APPID = '52a5953e2a7bdc44bf863adcd65226c7';
+        this.APPID = 'aec37e7571e93486dba2bbda5929c241';
     }
 
     getCurrent(place) {
@@ -31,6 +31,14 @@ export default class HomeService {
         }).then((response) => {
             return response.data.list;
         }, (response) => {});
+    }
+
+    setActiveFilter(filters, filter) {
+        Object
+            .keys(filters)
+            .forEach((key) => {
+                filters[key] = (key === filter) ? true : false;
+            });
     }
 
     manageView(filter, place) {

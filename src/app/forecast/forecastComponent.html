@@ -1,0 +1,8 @@
+<i ng-if='$ctrl.w.weather[0].id >= 600 && $ctrl.w.weather[0].id < 700' class="wi wi-day-snow fc-wrap__icons"></i>
+<i ng-if='$ctrl.w.weather[0].id >= 200 && $ctrl.w.weather[0].id < 300' class="wi wi-day-thunderstorm fc-wrap__icons"></i>
+<i ng-if='$ctrl.w.weather[0].id >= 300 && $ctrlw.weather[0].id < 500' class="wi wi-day-sleet fc-wrap__icons"></i>
+<i ng-if='$ctrl.w.weather[0].id >= 500 && $ctrl.w.weather[0].id < 600' class="wi wi-day-thunderstorm fc-wrap__icons"></i>
+<i ng-if='$ctrl.w.weather[0].id >= 800 && $ctrl.w.weather[0].id < 900' class="wi wi-day-sunny fc-wrap__icons"></i>
+<br/>
+<br/>
+<span class="fc-wrap__well__desc">{{$ctrl.w.weather[0].description}}</span>

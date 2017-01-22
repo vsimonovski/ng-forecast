@@ -1,22 +1,26 @@
-export default function routing($stateProvider, $locationProvider) {
+import homeTemplate from './home/home.html';
+import fcTemplate from './forecast/forecast.html';
+
+export default function routing($stateProvider, $locationProvider, $urlRouterProvider) {
     'ngInject';
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
+    $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('home', {
             url: '/',
-            template: require('./home/home.html'),
+            templateUrl: homeTemplate,
             controller: 'HomeController',
             controllerAs: '$ctrl'
         })
         .state('forecastSingle', {
             url: '/forecast/:q',
-            template: require('./forecast/forecast.html'),
+            templateUrl: fcTemplate,
             controller: 'ForecastController',
             controllerAs: '$ctrl'
         })
         .state('forecast', {
             url: '/forecast/:q/:id',
-            template: require('./forecast/forecast.html'),
+            templateUrl: fcTemplate,
             controller: 'ForecastController',
             controllerAs: '$ctrl'
         })

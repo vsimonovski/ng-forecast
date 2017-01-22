@@ -1,7 +1,7 @@
 export default class ForecastController {
-    constructor($stateParams, cityService, $scope) {
+    constructor($stateParams, appService, $scope) {
         'ngInject';
-        this.cityService = cityService;
+        this.appService = appService;
         this.days = $stateParams.id || 1;
         this.place = $stateParams.q;
         this.filters = {
@@ -10,14 +10,10 @@ export default class ForecastController {
             '7 days': false
         }
 
-        cityService.getDaily(this.days, this.place).then((d) => {
-            this.data = d;
-        })
-
         // Get current returns current temperature, 
         // still not used in app.
         /*
-        cityService.getCurrent(this.place).then((d) => {
+        appService.getCurrent(this.place).then((d) => {
             this.current = d;
         });
         */
@@ -25,14 +21,10 @@ export default class ForecastController {
 
     setActive(filter) {
         let filters = this.filters;
-        Object
-            .keys(filters)
-            .forEach((key) => {
-                filters[key] = (key === filter) ? true : false;
-            });
-        this.cityService.manageView(filter, this.place).then((d) => {
+        let appService = this.appService;
+        appService.setActiveFilter(filters, filter);
+        appService.manageView(filter, this.place).then((d) => {
             this.data = d;
-            console.log(d);
         });
     }
 
