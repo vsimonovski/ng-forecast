@@ -22,7 +22,6 @@ body {
     }
     &__button {
         $border-size: 3px;
-        width: 185px;
         height: 40px;
         color: $white!important;
         font-weight: 500;
@@ -39,6 +38,15 @@ body {
         padding-top: 36px!important;
         font-family: 'Roboto';
         font-weight: 500;
+        &__weather {
+            text-align: center;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        &__temperature {
+            text-align: center; 
+            margin-top: 16px;
+        }
         &__date {
             position: absolute;
             top: 11px;
@@ -46,9 +54,6 @@ body {
         }
         &__desc {
             text-transform: capitalize;
-            display: block;
-            width: 135px;
-            margin: 0 auto;
         }
     }
     &__icons {
